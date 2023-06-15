@@ -48,7 +48,7 @@
 #include <System/sys/csr.h>
 #include <System/sys/reason.h>
 #include <System/machine/cpu_capabilities.h>
-#include <CrashReporterClient.h>
+//#include <CrashReporterClient.h>
 #include <libproc_internal.h>
 #if !TARGET_OS_SIMULATOR && BUILDING_DYLD
     #include <libamfi.h>

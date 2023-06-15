@@ -3960,7 +3960,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -3993,7 +3993,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -4740,6 +4740,7 @@
 					"-Wl,-exported_symbol,_dyld_shared_cache_extract_dylibs_progress",
 				);
 				PRODUCT_NAME = dsc_extractor;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -4770,6 +4771,7 @@
 					"-Wl,-exported_symbol,_dyld_shared_cache_extract_dylibs_progress",
 				);
 				PRODUCT_NAME = dsc_extractor;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;

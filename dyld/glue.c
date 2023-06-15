@@ -105,6 +105,7 @@ extern void _ZN5dyld43logEPKcz(const char*, ...);
 extern void _ZN5dyld44haltEPKc(const char* msg) __attribute__((noreturn));
 
 extern void dyld_fatal_error(const char* errString) __attribute__((noreturn));
+void abort_report_np(const char* format, ...);
 
 
 // abort called by C++ unwinding code
@@ -183,13 +184,15 @@ void __cxa_pure_virtual()
 }
 
 // __cxxabiv1::__terminate_handler
-void* _ZN10__cxxabiv119__terminate_handlerE  = &_ZSt9terminatev;
+void* _ZN10__cxxabiv119__terminate_handlerE  = (void *)&_ZSt9terminatev;
 
 // __cxxabiv1::__unexpected_handler
-void* _ZN10__cxxabiv120__unexpected_handlerE = &_ZSt10unexpectedv;
+void* _ZN10__cxxabiv120__unexpected_handlerE = (void *)&_ZSt10unexpectedv;
 
 
-int	myfprintf(FILE* file, const char* format, ...) __asm("_fprintf");
+int	myfprintf(FILE* file, const char* format, ...) {
+    //__asm("_fprintf");
+}
 
 // called by libuwind code before aborting
 size_t fwrite(const void* ptr, size_t size, size_t nitme, FILE* stream)

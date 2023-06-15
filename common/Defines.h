@@ -94,12 +94,14 @@
 #define BUILDING_CACHE_BUILDER 0
 #endif
 
-#if !TARGET_OS_DRIVERKIT && (BUILDING_LIBDYLD || BUILDING_DYLD || BUILDING_SHARED_CACHE_EXTRACTOR || BUILDING_SHARED_CACHE_UTIL || BUILDING_LIBDSC)
-  #include <CrashReporterClient.h>
-#else
-  #define CRSetCrashLogMessage(x)
-  #define CRSetCrashLogMessage2(x)
-#endif
+//#if !TARGET_OS_DRIVERKIT && (BUILDING_LIBDYLD || BUILDING_DYLD || BUILDING_SHARED_CACHE_EXTRACTOR || BUILDING_SHARED_CACHE_UTIL || BUILDING_LIBDSC)
+//  #include <CrashReporterClient.h>
+//#else
+//  #define CRSetCrashLogMessage(x)
+//  #define CRSetCrashLogMessage2(x)
+//#endif
+#define CRSetCrashLogMessage(x)
+#define CRSetCrashLogMessage2(x)
 
 #if defined(DEBUG) && DEBUG
 #define contract assert

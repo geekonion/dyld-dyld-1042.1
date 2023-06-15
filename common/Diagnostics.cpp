@@ -56,6 +56,8 @@
   dispatch_queue_t sWarningQueue = dispatch_queue_create("com.apple.dyld.cache-builder.warnings", NULL);
 #endif
 
+void abort_report_np(const char* format, ...);
+
 Diagnostics::Diagnostics(bool verbose)
 #if BUILDING_CACHE_BUILDER || BUILDING_UNIT_TESTS || BUILDING_CACHE_BUILDER_UNIT_TESTS
     : _prefix(""), _verbose(verbose)
@@ -130,8 +132,8 @@ void Diagnostics::clearError()
 
 void Diagnostics::assertNoError() const
 {
-    if ( _buffer != nullptr )
-        abort_report_np("%s", _simple_string(_buffer));
+//    if ( _buffer != nullptr )
+//        abort_report_np("%s", _simple_string(_buffer));
 }
 
 bool Diagnostics::errorMessageContains(const char* subString) const
